@@ -78,7 +78,7 @@ export const Nav = () => {
                         <div className="md:hidden">
                             <button
                                 onClick={toggleMobileMenu}
-                                className="inline-flex items-center justify-center p-2 rounded-md
+                                className="inline-flex items-center justify-center p-3 rounded-md
                                    text-gray-400 hover:text-white hover:bg-gray-700
                                    focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white
                                    transition-colors"

@@ -1,5 +1,7 @@
 import { Nav } from "./Component/Nav";
 import { Hero } from "./Component/Hero";
+import {Headline} from './Component/Headline'
+import {Service} from './Component/Service'
 import { Route, Routes } from "react-router";
 import 'remixicon/fonts/remixicon.css'
 export default function App() {
@@ -13,10 +15,17 @@ export default function App() {
 
       <Nav />
 
-      <div className="flex-1 mt-16">
+      <div className="flex-1 ">
         <Hero />
       </div>
 
+     <div>
+       <Headline/>
+     </div>
+
+      <div>
+       <Service/>
+     </div>
 
 
       <Routes>
