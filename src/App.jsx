@@ -2,16 +2,18 @@ import { Nav } from "./Component/Nav";
 import { Hero } from "./Component/Hero";
 import {Headline} from './Component/Headline'
 import {Service} from './Component/Service'
+import {AboutMe} from './Component/AboutMe'
+import {Projects } from './Component/Projects'
+
 import { Route, Routes } from "react-router";
 import 'remixicon/fonts/remixicon.css'
-export default function App() {
 
+
+export default function App() {
 
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-zinc-700 to-purple-800 flex flex-col">
-
-
 
       <Nav />
 
@@ -25,6 +27,14 @@ export default function App() {
 
       <div>
        <Service/>
+     </div>
+
+      <div>
+       <AboutMe/>
+     </div>
+
+     <div>
+       <Projects/>
      </div>
 
 

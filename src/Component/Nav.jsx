@@ -32,7 +32,7 @@ export const Nav = () => {
                         <h1 className="text-2xl font-bold text-green-400 flex items-center gap-2">
                             <i className="ri-code-s-slash-line"></i>
                             <span className="inline-flex items-center justify-center
-                               w-[26px] h-[28px] rounded-xl
+                               w-[26px] h-[28px] rounded-2xl
                                bg-gradient-to-t from-green-500 to-emerald-600 text-white font-bold
                                hover:shadow-xl hover:shadow-green-500/50 hover:scale-105 transition-all duration-200">
                                 Z

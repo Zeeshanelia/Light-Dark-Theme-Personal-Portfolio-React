@@ -4,7 +4,7 @@ export const Service = () => {
 
     return (
 
-        <section className="relative  bg-gradient-to-r from-zinc-700 to-purple-800 text-white md:py-28 overflow-hidden">
+        <section className="relative  bg-gradient-to-r from-zinc-700 to-purple-800 text-white md:py-18 overflow-hidden">
 
             {/* BACKGROUND WATERMARK TEXT */}
             <h1 className="absolute md:top-20 left-1/2 -translate-x-1/2 md:text-[160px] text-[60px] font-extrabold text-white/5 tracking-widest select-none">
@@ -54,14 +54,14 @@ export const Service = () => {
                             desc:
                                 "Creating modern, scalable app designs with a seamless user journey tailored to your product and brand goals.",
                             icon: <PenTool className="w-6 h-6 text-green-500" />,
-                            features: ["Mobile App Design", "iOS & Android", "Dashboard Design", "Interactive Prototypes"]
+                            features: [, "Chart Flow", "Admin Dashboard ", "Interactive Prototypes"]
                         },
                         {
                             title: "Website Design",
                             desc:
                                 "Building responsive, high-performance websites that strengthen brand identity and drive user engagement.",
                             icon: <Globe className="w-6 h-6 text-green-500" />,
-                            features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Cross-Browser"]
+                            features: ["Cell Phone Responsive Design", "SEO Optimized", "Fast Loading", "Cross-Browser"]
                         },
                     ].map((item, i) => (
                         <div
@@ -117,7 +117,7 @@ export const Service = () => {
 
                 {/* MOBILE CTA */}
                 <div className="mt-12 text-center md:hidden">
-                    <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-black font-bold px-10 py-4 rounded-full
+                    <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-black font-bold md:px-10 px-2 md:py-4 py-1 rounded-full
             hover:bg-green-400 transition-all shadow-xl shadow-green-500/30 mx-auto">
                         View All Services
                         <Eye className="w-4 h-4" />
@@ -125,11 +125,11 @@ export const Service = () => {
                 </div>
 
                 {/* BOTTOM DECORATIVE ELEMENT */}
-                <div className="mt-12 text-xl flex flex-col items-center gap-6">
-                    <div className="flex items-center gap-4 text-gray-400">
-                        <div className="h-px w-20 bg-gradient-to-r from-transparent to-green-500/50" />
+                <div className="mt-12 md:text-xl flex flex-col items-center gap-6">
+                    <div className="flex items-center md:gap-4 gap-1 text-gray-400">
+                        <div className="h-px md:w-48 w-16 bg-gradient-to-r from-transparent to-green-500/50" />
                         <span className="text-sm tracking-widest">EXPERTISE AREAS</span>
-                        <div className="h-px w-20 bg-gradient-to-l from-transparent to-green-500/50" />
+                        <div className="h-px md:w-48 w-16 bg-gradient-to-l from-transparent to-green-500/50" />
                     </div>
                     <p className="text-center text-gray-400 max-w-2xl">
                         Each project receives dedicated attention to detail, ensuring pixel-perfect execution
