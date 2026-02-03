@@ -4,7 +4,8 @@ import {Headline} from './Component/Headline'
 import {Service} from './Component/Service'
 import {AboutMe} from './Component/AboutMe'
 import {Projects } from './Component/Projects'
-
+import {HeadlineSlider} from './Component/HeadlineSlider'
+import {Education } from "./Component/Education"
 import { Route, Routes } from "react-router";
 import 'remixicon/fonts/remixicon.css'
 
@@ -35,6 +36,15 @@ export default function App() {
 
      <div>
        <Projects/>
+     </div>
+
+
+     <div>
+       <HeadlineSlider/>
+     </div>
+
+       <div>
+       <Education/>
      </div>
 
 

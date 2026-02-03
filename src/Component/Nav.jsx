@@ -24,12 +24,12 @@ export const Nav = () => {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 text-white shadow-lg backdrop-blur-sm bg-gray-900/90">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
 
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <h1 className="text-2xl font-bold text-green-400 flex items-center gap-2">
+                        <h1 className="md:text-2xl font-bold text-green-400 flex items-center gap-2">
                             <i className="ri-code-s-slash-line"></i>
                             <span className="inline-flex items-center justify-center
                                w-[26px] h-[28px] rounded-2xl
@@ -70,7 +70,7 @@ export const Nav = () => {
                         </button>
 
                         {/* Call to action button */}
-                        <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg px-4 py-2 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300">
+                        <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg px-3 md:py-2 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300">
                             Let's Talk
                         </button>
 
