@@ -7,11 +7,11 @@ import {Projects } from './Component/Projects'
 import {HeadlineSlider} from './Component/HeadlineSlider'
 import {Education } from "./Component/Education"
 import { Route, Routes } from "react-router";
+import {PricesPlan} from './Component/PricesPlan'
+import {Testimonials} from './Component/Testimonials'
 import 'remixicon/fonts/remixicon.css'
 
-
 export default function App() {
-
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-zinc-700 to-purple-800 flex flex-col">
@@ -46,6 +46,15 @@ export default function App() {
        <div>
        <Education/>
      </div>
+
+       <div>
+       <PricesPlan/>
+     </div>
+
+      <div>
+       <Testimonials/>
+     </div>
+
 
 
       <Routes>
