@@ -14,7 +14,7 @@ export const AboutMe = () => {
 
 
     return (
-        <section className="relative bg-gradient-to-r from-zinc-700 to-purple-800 text-white  overflow-hidden">
+        <section className="relative bg-gradient-to-r from-zinc-700 to-purple-800  text-white  overflow-hidden">
 
 
 
@@ -48,18 +48,18 @@ export const AboutMe = () => {
                         ABOUT ME
                     </h2>
 
-                    <p className="uppercase tracking-widest text-xs text-gray-400 mb-3">
+                    <p className="uppercase tracking-widest text-lg text-gray-400 mb-3">
                         About Me
                     </p>
 
-                    <h3 className="text-4xl font-bold mb-6">
+                    <h3 className="text-3xl md:text-5xl font-bold mb-6">
                         Who is <span className="text-green-500">Zeeshan Elia ?</span>
                     </h3>
 
-                    <p className="text-gray-400 leading-relaxed max-w-md md:mb-10 mb-4">
+                    <p className="text-gray-400 leading-relaxed max-w-md md:mb-6 mb-4">
                         A web developer passionate about clean code, modern design, user
                         experience, and building responsive, accessible, and
-                        high-performing digital products.
+                        high-performing digital products. I am always eager to learn new technologies and improve my skills. I am looking for a challenging position where I can use my skills to create innovative and engaging Web App.
                     </p>
 
 
@@ -87,7 +87,7 @@ export const AboutMe = () => {
 
                     {/* CTA Section */}
 
-                    <button className=" group relative bg-gradient-to-r from-blue-600 via-cyan-800 to-purple-600 text-white md:font-bold  ml-10 md:px-10 md:py-5 rounded-full overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300 hover:-translate-y-1">
+                    <button className=" group relative bg-gradient-to-r from-blue-600 via-cyan-800 to-purple-600 text-white md:font-bold  ml-18 md:px-10 md:py-5 rounded-full overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300 hover:-translate-y-1">
 
                         <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600    opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-shimmer" />
 
@@ -98,7 +98,6 @@ export const AboutMe = () => {
                                 <i className="ri-file-pdf-line"></i>
                             </span>
                         </span>
-
                     </button>
 
                     {/* Available Status */}

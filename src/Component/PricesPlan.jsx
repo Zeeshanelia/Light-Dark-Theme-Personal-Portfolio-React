@@ -4,7 +4,7 @@ const plans = [
   {
     id: "hourly",
     name: "Hourly",
-    price: "$80",
+    price: "$50",
     period: "/Hour",
     features: [
       "Lorem ipsum dolor sit amet",
@@ -20,7 +20,7 @@ const plans = [
   {
     id: "monthly",
     name: "Monthly",
-    price: "$9600",
+    price: "$8000",
     period: "/Month",
     isPopular: true,
     features: [
@@ -37,7 +37,7 @@ const plans = [
   {
     id: "quarterly",
     name: "Quarterly",
-    price: "$28,000",
+    price: "$25,000",
     period: "/Qtr",
     features: [
       "Lorem ipsum dolor sit amet",
@@ -56,7 +56,7 @@ export const PricesPlan = () => {
   const [selectedPlan, setSelectedPlan] = useState('monthly');
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-zinc-700 to-purple-800 text-white py-16 px-5 md:px-10">
+    <div className="min-h-screen bg-gradient-to-r from-zinc-700 to-purple-800 text-white md:py-16 py-6 px-6 md:px-22">
       {/* Header */}
 
 
@@ -75,21 +75,26 @@ export const PricesPlan = () => {
           My Pricing Model <span className="text-green-500">?</span>
         </h3>
 
-        <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-black font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg shadow-green-900/30">
+        {/* <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-black font-semibold px-8 md:py-4 rounded-full text-lg transition-colors duration-300 shadow-lg shadow-green-900/30">
           Get Started
-        </button>
+        </button> */}
       </div>
 
-      {/* Plan Toggle */}
-      <div className="flex justify-center mb-16">
-        <div className="inline-flex rounded-full border border-gray-800 bg-gray-900 p-1">
+
+
+      {/* 3 Plan Toggle */}
+      <div className="flex justify-center  mb-10">
+        <div className="inline-flex rounded-full border border-gray-800 bg-gray-900 p-2">
+
           {plans.map((plan) => (
             <button
               key={plan.id}
               onClick={() => setSelectedPlan(plan.id)}
-              className={`px-8 py-3 text-lg font-medium rounded-full transition-all duration-300 ${selectedPlan === plan.id
-                ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-black shadow-lg shadow-green-600/40'
-                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+              className={`md:px-8 px-3 py-3 md:text-lg space-x-10 font-medium rounded-full transition-all duration-300
+                 ${selectedPlan === plan.id ?
+                  'bg-gradient-to-r from-green-500 to-emerald-600 text-black shadow-lg shadow-green-600/40'
+                  :
+                  'text-gray-400 hover:text-white hover:bg-gray-800'
                 }`}
             >
               {plan.name}
@@ -98,6 +103,8 @@ export const PricesPlan = () => {
         </div>
       </div>
 
+
+
       {/* Cards */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
         {plans.map((plan) => (
@@ -105,7 +112,7 @@ export const PricesPlan = () => {
             key={plan.name}
             className={`
               relative bg-gradient-to-b from-gray-900 to-black
-              border rounded-3xl p-8 lg:p-10
+              border rounded-3xl  lg:p-10
               transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-green-900/20
               group cursor-pointer
               ${selectedPlan === plan.id
@@ -114,8 +121,9 @@ export const PricesPlan = () => {
               }
               ${plan.isPopular ? 'ring-2 ring-green-500/30' : ''}
             `}
-            onClick={() => setSelectedPlan(plan.id)}
-          >
+            onClick={() => setSelectedPlan(plan.id)}>
+
+
             {/* Top badge / arrow */}
             <div className="absolute -top-4 right-8">
               <div className={`
@@ -130,8 +138,8 @@ export const PricesPlan = () => {
             </div>
 
             {/* Price */}
-            <div className="mt-12 mb-10 text-center">
-              <div className="text-6xl lg:text-7xl font-black tracking-tight">
+            <div className="mt-4  mb-10 text-center">
+              <div className="text-6xl lg:text-6xl font-black tracking-tight">
                 {plan.price}
                 <span className="text-3xl lg:text-4xl font-bold text-green-400 ">
                   {plan.period}

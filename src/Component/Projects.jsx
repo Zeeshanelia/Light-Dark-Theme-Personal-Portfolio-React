@@ -22,10 +22,10 @@ export const Projects = () => {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-r from-zinc-700 to-purple-800 py-24 px-20 overflow-hidden">
+    <section className="relative w-full bg-gradient-to-r from-zinc-700 to-purple-800 py-24 md:px-20 px-8 overflow-hidden">
 
       {/* Background Text */}
-      <h1 className="absolute top-20 left-1/2 -translate-x-1/2 text-[80px] md:text-[115px] font-extrabold tracking-wider text-white/5 select-none pointer-events-none z-0">
+      <h1 className="absolute top-20 left-1/2 -translate-x-1/2 text-[40px]  md:text-[115px] font-extrabold tracking-wider text-white/5 select-none pointer-events-none z-0">
         PORTFOLIO
       </h1>
 
@@ -41,7 +41,7 @@ export const Projects = () => {
             </h2>
           </div>
 
-          <button className="hidden md:block px-6 py-2 rounded-full bg-green-500 text-black font-semibold hover:bg-green-400 transition">
+          <button className="hidden md:block px-6 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-black font-semibold hover:shadow-lg hover:shadow-green-100 transition">
             View All Projects
           </button>
         </div>

@@ -1,14 +1,16 @@
 import { Nav } from "./Component/Nav";
 import { Hero } from "./Component/Hero";
-import {Headline} from './Component/Headline'
-import {Service} from './Component/Service'
-import {AboutMe} from './Component/AboutMe'
-import {Projects } from './Component/Projects'
-import {HeadlineSlider} from './Component/HeadlineSlider'
-import {Education } from "./Component/Education"
+import { Headline } from './Component/Headline'
+import { Service } from './Component/Service'
+import { AboutMe } from './Component/AboutMe'
+import { Projects } from './Component/Projects'
+import { HeadlineSlider } from './Component/HeadlineSlider'
+import { Education } from "./Component/Education"
 import { Route, Routes } from "react-router";
-import {PricesPlan} from './Component/PricesPlan'
-import {Testimonials} from './Component/Testimonials'
+import { PricesPlan } from './Component/PricesPlan'
+import { Testimonials } from './Component/Testimonials'
+import { Contact } from './Component/Contact'
+import {Footer} from './Component/Footer'
 import 'remixicon/fonts/remixicon.css'
 
 export default function App() {
@@ -22,40 +24,50 @@ export default function App() {
         <Hero />
       </div>
 
-     <div>
-       <Headline/>
-     </div>
+      <div>
+        <HeadlineSlider />
+      </div>
 
       <div>
-       <Service/>
-     </div>
+        <Service />
+      </div>
 
       <div>
-       <AboutMe/>
-     </div>
+        <AboutMe />
+      </div>
 
-     <div>
-       <Projects/>
-     </div>
+      <div>
+        <Projects />
+      </div>
 
 
-     <div>
-       <HeadlineSlider/>
-     </div>
+
 
        <div>
-       <Education/>
-     </div>
-
-       <div>
-       <PricesPlan/>
-     </div>
+        <Headline />
+      </div>
 
       <div>
-       <Testimonials/>
-     </div>
+        <Education />
+      </div>
+
+      <div>
+        <PricesPlan />
+      </div>
+
+      <div>
+        <Testimonials />
+      </div>
 
 
+      <div>
+        < Contact />
+      </div>
+
+
+      <div>
+        < Footer />
+      </div>
 
       <Routes>
         {/* <Route path="/" element={<Home />} />

@@ -14,7 +14,7 @@ export const Hero = () => {
 
 
     return (
-        <section className="min-h-[calc(100vh-64px)] max-w-7xl mx-auto  md:py-10 ">
+        <section className="min-h-[calc(100vh-64px)] max-w-7xl mx-auto px-3 md:py-10 ">
             <div>
 
                 <div className=" md:flex text-white">
@@ -32,7 +32,7 @@ export const Hero = () => {
                             I am passionate about designing modern experiences that are both visually stunning and intuitive, and always strive to create Web Apps that delight and engage users.
                         </p>
 
-                        <div className="flex md:justify-between justify-evenly mt-2 px-2">
+                        <div className="flex  justify-evenly mt-2 px-2">
                             <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white md:font-semibold  rounded-3xl md:px-3 px-2 py-1 hover:shadow-lg hover:shadow-green-100 transition">
                                 View My Work
                             </button>
