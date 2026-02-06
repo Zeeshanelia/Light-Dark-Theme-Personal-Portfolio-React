@@ -1,5 +1,5 @@
 {
-  "name": "form-with-zod",
+  "name": "personal-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,9 +19,12 @@
     "lucide-react": "^0.563.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.13.0",
+    "react-slick": "^0.31.0",
     "remix": "^2.17.3",
     "remixicon": "^4.8.0",
+    "slick-carousel": "^1.8.1",
     "zod": "^4.2.1"
   },
   "devDependencies": {
