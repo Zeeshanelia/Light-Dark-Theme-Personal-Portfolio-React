@@ -1,7 +1,7 @@
 # Light Dark Theme Personal Portfolio
 
 
-npm install jspdf
+install react-slick --save
 
 
 

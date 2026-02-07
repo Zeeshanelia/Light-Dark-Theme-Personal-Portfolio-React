@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { Link as ScrollLink } from 'react-scroll';
+import { useLocation } from "react-router-dom";
 
 export const Nav = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+    const [activeSection, setActiveSection] = useState('home');
+
     const [theme, setTheme] = useState(() => {
         if (typeof window !== 'undefined') {
             const savedTheme = localStorage.getItem('theme');
@@ -28,6 +34,38 @@ export const Nav = () => {
         localStorage.setItem('theme', theme);
     }, [theme]);
 
+    // Track active section for highlighting
+    useEffect(() => {
+        if (!isHomePage) return;
+
+        const handleScroll = () => {
+            const sections = ['home', 'services', 'about-me', 'projects','pricing', 'testimonial', 'contact-me'];
+            const scrollPosition = window.scrollY + 100; // Offset for navbar
+
+            let currentSection = 'home';
+
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const offsetTop = element.offsetTop;
+
+                    // If we've scrolled past this section's top, it's potentially active
+                    if (scrollPosition >= offsetTop - 150) {
+                        currentSection = section;
+                    }
+                }
+            }
+
+            setActiveSection(currentSection);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Initial check
+        setTimeout(handleScroll, 100);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isHomePage]);
+
     const toggleTheme = () => {
         setTheme(prev => prev === 'dark' ? 'light' : 'dark');
     };
@@ -37,6 +75,7 @@ export const Nav = () => {
         { to: "services", icon: "ri-file-list-3-line", label: "Services" },
         { to: "about-me", icon: "ri-user-line", label: "About Me" },
         { to: "projects", icon: "ri-briefcase-line", label: "Projects" },
+        { to: "pricing", icon: "ri-currency-line  ", label: "Pricing" },
         { to: "testimonial", icon: "ri-chat-quote-line", label: "Testimonial" },
         { to: "contact-me", icon: "ri-mail-line", label: "Contact Me" },
     ];
@@ -49,6 +88,138 @@ export const Nav = () => {
         setIsMobileMenuOpen(false);
     };
 
+    // Scroll options configuration - removed spy since we handle it manually
+    const scrollOptions = {
+        smooth: true,
+        offset: -80,
+        duration: 800,
+    };
+
+    // Get active class based on section
+    const isActive = (sectionId) => {
+        if (!isHomePage) {
+            return location.hash === `#${sectionId}` || (sectionId === 'home' && location.pathname === '/');
+        }
+        return activeSection === sectionId;
+    };
+
+    // Common styles
+    const activeClasses = "bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg shadow-green-500/30";
+    const inactiveClasses = "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white";
+
+    // Render navigation link based on current page
+    const renderNavLink = (item) => {
+        const itemIsActive = isActive(item.to);
+
+        // If on homepage, use ScrollLink for smooth scrolling
+        if (isHomePage) {
+            return (
+                <ScrollLink
+                    key={item.to}
+                    to={item.to}
+                    {...scrollOptions}
+                    className={`inline-flex items-center px-3 py-2 rounded-lg font-medium gap-2 text-sm transition-all duration-300 ease-in-out cursor-pointer ${itemIsActive ? activeClasses : inactiveClasses}`}
+                    onClick={closeMobileMenu}
+                >
+                    <i className={item.icon}></i>
+                    <span>{item.label}</span>
+                </ScrollLink>
+            );
+        } else {
+            // If not on homepage, use NavLink
+            if (item.to === "home") {
+                return (
+                    <NavLink
+                        key={item.to}
+                        to="/"
+                        end={true}
+                        className={({ isActive }) =>
+                            `inline-flex items-center px-3 py-2 rounded-lg font-medium gap-2 text-sm transition-all duration-300 ease-in-out ${isActive
+                                ? activeClasses
+                                : inactiveClasses
+                            }`}
+                    >
+                        <i className={item.icon}></i>
+                        <span>{item.label}</span>
+                    </NavLink>
+                );
+            } else {
+                return (
+                    <NavLink
+                        key={item.to}
+                        to={`/#${item.to}`}
+                        onClick={closeMobileMenu}
+                        className={({ isActive }) =>
+                            `inline-flex items-center px-3 py-2 rounded-lg font-medium gap-2 text-sm transition-all duration-300 ease-in-out ${isActive
+                                ? activeClasses
+                                : inactiveClasses
+                            }`}
+                    >
+                        <i className={item.icon}></i>
+                        <span>{item.label}</span>
+                    </NavLink>
+                );
+            }
+        }
+    };
+
+    // Render mobile navigation link
+    const renderMobileNavLink = (item) => {
+        const itemIsActive = isActive(item.to);
+
+        if (isHomePage) {
+            return (
+                <ScrollLink
+                    key={item.to}
+                    to={item.to}
+                    {...scrollOptions}
+                    onClick={closeMobileMenu}
+                    className={`flex items-center px-4 py-3 rounded-md text-base font-medium gap-3 transition-all duration-200 cursor-pointer ${itemIsActive ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white" : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"}`}
+                >
+                    <i className={item.icon}></i>
+                    <span>{item.label}</span>
+                </ScrollLink>
+            );
+        } else {
+            if (item.to === "home") {
+                return (
+                    <NavLink
+                        key={item.to}
+                        to="/"
+                        end={true}
+                        onClick={closeMobileMenu}
+                        className={({ isActive }) =>
+                            `flex items-center px-4 py-3 rounded-md text-base font-medium gap-3 transition-all duration-200 ${isActive
+                                ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white"
+                                : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            }`
+                        }
+                    >
+                        <i className={item.icon}></i>
+                        <span>{item.label}</span>
+                    </NavLink>
+                );
+            } else {
+                return (
+                    <NavLink
+                        key={item.to}
+                        to={`/#${item.to}`}
+                        onClick={closeMobileMenu}
+                        className={({ isActive }) =>
+                            `flex items-center px-4 py-3 rounded-md text-base font-medium gap-3 transition-all duration-200 ${isActive
+                                ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white"
+                                : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            }`
+                        }
+                    >
+                        <i className={item.icon}></i>
+                        <span>{item.label}</span>
+                    </NavLink>
+                );
+            }
+        }
+    };
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 shadow-lg backdrop-blur-sm
                        bg-white/90 dark:bg-gray-900/90
@@ -58,36 +229,24 @@ export const Nav = () => {
 
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <h1 className="md:text-2xl font-bold text-green-600 dark:text-green-400 flex items-center gap-2">
-                            <i className="ri-code-s-slash-line"></i>
-                            <span className="inline-flex items-center justify-center
-                               w-[26px] h-[28px] rounded-2xl
-                               bg-gradient-to-t from-green-500 to-emerald-600 text-white font-bold
-                               hover:shadow-xl hover:shadow-green-500/50 hover:scale-105 transition-all duration-200">
-                                Z
-                            </span>
-                            <span className="hidden sm:inline">eeshanElia</span>
-                        </h1>
+                        <NavLink to="/" className="flex items-center gap-2">
+                            <h1 className="md:text-2xl font-bold text-green-600 dark:text-green-400 flex items-center gap-2">
+                                <i className="ri-code-s-slash-line"></i>
+                                <span className="inline-flex items-center justify-center
+                                   w-[26px] h-[28px] rounded-2xl
+                                   bg-gradient-to-t from-green-500 to-emerald-600 text-white font-bold
+                                   hover:shadow-xl hover:shadow-green-500/50 hover:scale-105 transition-all duration-200">
+                                    Z
+                                </span>
+                                <span className="hidden sm:inline">eeshanElia</span>
+                            </h1>
+                        </NavLink>
                     </div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-2">
-                            {menus.map((item) => (
-                                <NavLink
-                                    key={item.to}
-                                    to={`/${item.to}`}
-                                    end={item.to === "home"}
-                                    className={({ isActive }) =>
-                                        `inline-flex items-center px-3 py-2 rounded-lg font-medium gap-2 text-sm transition-all duration-300 ease-in-out ${isActive
-                                            ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg shadow-green-500/30"
-                                            : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
-                                        }`}
-                                >
-                                    <i className={item.icon}></i>
-                                    <span>{item.label}</span>
-                                </NavLink>
-                            ))}
+                            {menus.map((item) => renderNavLink(item))}
                         </div>
                     </div>
 
@@ -110,9 +269,22 @@ export const Nav = () => {
                         </button>
 
                         {/* Call to action button */}
-                        <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg px-4 py-2 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300">
-                            Let's Talk
-                        </button>
+                        {isHomePage ? (
+                            <ScrollLink
+                                to="contact-me"
+                                {...scrollOptions}
+                                className={`bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg px-4 py-2 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 cursor-pointer ${isActive('contact-me') ? 'ring-2 ring-green-300' : ''}`}
+                            >
+                                Let's Talk
+                            </ScrollLink>
+                        ) : (
+                            <NavLink
+                                to="/#contact-me"
+                                className="bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg px-4 py-2 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300"
+                            >
+                                Let's Talk
+                            </NavLink>
+                        )}
 
                         {/* Mobile menu button */}
                         <div className="md:hidden">
@@ -124,7 +296,8 @@ export const Nav = () => {
                                    focus:outline-none focus:ring-2 focus:ring-green-500
                                    transition-colors duration-300"
                                 aria-expanded={isMobileMenuOpen}
-                                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}>
+                                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                            >
                                 {isMobileMenuOpen ? (
                                     <i className="ri-close-line text-2xl"></i>
                                 ) : (
@@ -138,32 +311,16 @@ export const Nav = () => {
 
             {/* Mobile Navigation */}
             <div
-                className={`md:hidden transition-all duration-300 ease-in-out ${
-                    isMobileMenuOpen
+                className={`md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen
                         ? "max-h-96 opacity-100"
                         : "max-h-0 opacity-0 overflow-hidden"
-                }`}>
+                    }`}
+            >
                 <div className="px-2 pt-2 pb-3 space-y-1
                               bg-white/95 dark:bg-gray-900/95
-                              backdrop-blur-sm border-t border-gray-200 dark:border-gray-800">
-                    {menus.map((item) => (
-                        <NavLink
-                            key={item.to}
-                            to={`/${item.to}`}
-                            end={item.to === "home"}
-                            onClick={closeMobileMenu}
-                            className={({ isActive }) =>
-                                `flex items-center px-4 py-3 rounded-md
-                                 text-base font-medium gap-3 transition-all duration-200
-                                 ${isActive
-                                    ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white"
-                                    : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                                }`
-                            }>
-                            <i className={item.icon}></i>
-                            <span>{item.label}</span>
-                        </NavLink>
-                    ))}
+                              backdrop-blur-sm border-t border-gray-200 dark:border-gray-800"
+                >
+                    {menus.map((item) => renderMobileNavLink(item))}
 
                     {/* Theme toggle for mobile */}
                     <div className="pt-2 border-t border-gray-200 dark:border-gray-700 px-4">
@@ -175,7 +332,8 @@ export const Nav = () => {
                             className="flex items-center gap-3 px-4 py-3 rounded-md
                                      text-gray-600 dark:text-gray-300
                                      hover:bg-gray-100 dark:hover:bg-gray-800
-                                     transition-colors w-full">
+                                     transition-colors w-full"
+                        >
                             {theme === 'dark' ? (
                                 <>
                                     <i className="ri-sun-line text-xl"></i>

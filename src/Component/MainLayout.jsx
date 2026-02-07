@@ -11,36 +11,63 @@ import { Testimonials } from './Testimonials'
 import { Contact } from './Contact'
 import { Footer } from './Footer'
 
-
 export const MainLayout = () => {
     return (
-        <div className="min-h-screen ">
+        <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-gray-100 transition-colors duration-300">
 
+            {/* Navigation */}
+            <Nav />
 
-            <main className="bg-white dark:bg-gray-900 text-black dark:text-gray-100 transition-colors duration-300"> {/* Adjust based on your navbar height */}
+            {/* Main Content with top padding for fixed nav */}
+            <main className="pt-16"> {/* Adjust based on your navbar height */}
 
-                <Nav />
-                <Hero />
+                {/* Hero Section - should have id="home" */}
+                <section id="home">
+                    <Hero />
+                </section>
+
+                {/* HeadlineSlider - optional id if you want to link to it */}
                 <HeadlineSlider />
-                <Service />
-                <AboutMe />
-                <Projects />
+
+                {/* Services Section - should have id="services" */}
+                <section id="services">
+                    <Service />
+                </section>
+
+                {/* About Me Section - should have id="about-me" */}
+                <section id="about-me">
+                    <AboutMe />
+                </section>
+
+                {/* Projects Section - should have id="projects" */}
+                <section id="projects">
+                    <Projects />
+                </section>
+
+                {/* Headline Section */}
                 <Headline />
+
+                {/* Education Section */}
                 <Education />
-                <PricesPlan />
-                <Testimonials />
-                < Contact />
-                < Footer />
+
+                {/* PricesPlan Section - should have id="pricing" */}
+                <section id="pricing">
+                    <PricesPlan />
+                </section>
+
+                {/* Testimonials Section - should have id="testimonial" */}
+                <section id="testimonial">
+                    <Testimonials />
+                </section>
+
+                {/* Contact Section - should have id="contact-me" */}
+                <section id="contact-me">
+                    <Contact />
+                </section>
             </main>
 
-            {/* Example footer with dark mode */}
-            {/* <footer className="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 mt-12">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <p className="text-center text-gray-600 dark:text-gray-400">
-                        © {new Date().getFullYear()} Your Portfolio. All rights reserved.
-                    </p>
-                </div>
-            </footer> */}
+            {/* Footer Component */}
+            <Footer />
         </div>
     );
 };

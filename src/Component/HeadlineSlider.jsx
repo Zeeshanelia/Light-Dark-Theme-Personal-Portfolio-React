@@ -1,33 +1,38 @@
 export const HeadlineSlider = () => {
     const tags = [
-        "React.js", "Next.js", "Tailwind CSS", "TypeScript", "Node.js",
-        "Express.js", "MongoDB", "GraphQL", "Redux Toolkit", "Zustand",
-        "Framer Motion", "Git & GitHub", "AWS", "Docker", "Jest",
-        "Cypress", "Firebase", "Prisma", "PostgreSQL", "Vite"
+        "React.js", "Redux-Toolkit", "Tailwind CSS", "Bootstrap Css", "Node.js",
+        "Css3", "JavaScript", "Html", "Redux Toolkit", "Zustand",
+        "Framer Motion", "Git & GitHub", "Firebase", "Vite", "SupaBase",
     ];
 
     return (
-        <section className="relative overflow-hidden py-8 md:py-12
+        <section className="relative overflow-hidden py-4
                           transition-colors duration-300
                           bg-gradient-to-r from-gray-100 to-blue-50
                           dark:from-gray-900 dark:to-purple-900
                           text-gray-900 dark:text-gray-100">
+
+
 
             {/* Top Border Decoration */}
             <div className="absolute top-0 left-0 right-0 h-px
                           bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent
                           dark:via-emerald-500/50" />
 
+
+
             {/* Bottom Border Decoration */}
             <div className="absolute bottom-0 left-0 right-0 h-px
                           bg-gradient-to-r from-transparent via-purple-500/30 to-transparent
                           dark:via-purple-500/50" />
 
+
+
             {/* Container */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title */}
-                <div className="text-center mb-8 md:mb-12">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-3
+                <div className="text-center mb-6 md:mb-14">
+                    <h2 className="text-xl md:text-3xl font-bold mb-3
                                   text-gray-800 dark:text-gray-100">
                         <span className="text-emerald-600 dark:text-emerald-400">
                             Technologies
@@ -38,10 +43,12 @@ export const HeadlineSlider = () => {
                     </p>
                 </div>
 
+
+
                 {/* Slider Container */}
-                <div className="relative overflow-hidden py-4">
+                <div className="relative overflow-hidden ">
                     {/* Mask Gradients - Prevent overflow */}
-                    <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24
+                    <div className="absolute left-0 top-0 bottom-0 w-12 md:w-22
                                   bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent
                                   z-10 pointer-events-none" />
                     <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24
@@ -49,8 +56,8 @@ export const HeadlineSlider = () => {
                                   z-10 pointer-events-none" />
 
                     {/* First Slider - Left to Right */}
-                    <div className="flex mb-6">
-                        <div className="flex animate-slide-left gap-3 md:gap-4">
+                    <div className="flex mb-4">
+                        <div className="flex animate-slide-left gap-3 md:gap-6">
                             {[...tags.slice(0, 10), ...tags.slice(0, 10)].map((tag, index) => (
                                 <div
                                     key={`left-${index}`}
@@ -77,13 +84,13 @@ export const HeadlineSlider = () => {
                                     </span>
 
                                     {/* Icon */}
-                                    <span className="absolute -top-1 -right-1 w-5 h-5
+                                    {/* <span className="absolute -top-1 -right-1 w-5 h-5
                                                    bg-emerald-500 dark:bg-emerald-600
                                                    rounded-full flex items-center justify-center
                                                    text-xs text-white opacity-0 group-hover:opacity-100
                                                    transition-opacity duration-300 shadow-sm">
                                         →
-                                    </span>
+                                    </span> */}
                                 </div>
                             ))}
                         </div>
@@ -118,35 +125,34 @@ export const HeadlineSlider = () => {
                                     </span>
 
                                     {/* Icon */}
-                                    <span className="absolute -top-1 -right-1 w-5 h-5
+                                    {/* <span className="absolute -top-1 -right-1 w-5 h-5
                                                    bg-purple-500 dark:bg-purple-600
                                                    rounded-full flex items-center justify-center
                                                    text-xs text-white opacity-0 group-hover:opacity-100
                                                    transition-opacity duration-300 shadow-sm">
                                         ⚡
-                                    </span>
+                                    </span> */}
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
 
-                {/* Decorative Dots */}
-                <div className="flex justify-center gap-2 mt-8 md:mt-12">
+                {/* Decorative Dots
+                <div className="flex justify-center gap-2 mt-4 md:mt-6">
                     {[1, 2, 3].map((dot) => (
                         <div
                             key={dot}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                dot === 2
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 2
                                     ? 'bg-emerald-500 dark:bg-emerald-400'
                                     : 'bg-gray-300 dark:bg-gray-600'
-                            }`}
+                                }`}
                         />
                     ))}
-                </div>
+                </div> */}
 
                 {/* Call to Action */}
-                <div className="text-center mt-8">
+                <div className="text-center mt-6">
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                         Continuously learning and adapting to new technologies
                     </p>
