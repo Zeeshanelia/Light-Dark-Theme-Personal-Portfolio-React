@@ -1,4 +1,21 @@
+import { motion } from "motion/react"
+
 export const Hero = () => {
+
+    const container = (delay) => ({
+        hidden: {
+            x: -100,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 2,
+                delay: delay
+            },
+        },
+    })
     const downloadCV = () => {
         const link = document.createElement('a');
         link.href = '/images/OfferLetter.pdf';
@@ -23,15 +40,17 @@ export const Hero = () => {
         <section
             id="home"
             className="min-h-[calc(100vh-64px)] flex items-center py-2 px-4 sm:px-16 lg:px-20
-                       transition-colors duration-300
-                       bg-gradient-to-r from-gray-50 to-blue-50
-                       dark:from-gray-900 dark:to-purple-900
-                       text-gray-900 dark:text-gray-100"
-        >
+                       transition-colors duration-300 bg-gradient-to-r from-gray-50 to-blue-50
+                       dark:from-gray-900 dark:to-purple-900 text-gray-900 dark:text-gray-100">
+
             <div className="max-w-7xl mx-auto w-full">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
                     {/* Left side - Text Content */}
-                    <div className="lg:w-1/2 text-center lg:text-left space-y-6 md:space-y-8">
+                    <motion.div
+                        variants={container(1)}  // Instantiate with delay value
+                        initial="hidden"
+                        animate="visible"
+                        className="lg:w-1/2 text-center lg:text-left space-y-6 md:space-y-8">
                         <div className="space-y-4">
                             <span className="text-lg md:text-xl text-emerald-600 dark:text-emerald-400
                                            font-medium tracking-wide">
@@ -169,7 +188,7 @@ export const Hero = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right side - Image */}
                     <div className="lg:w-1/2 flex justify-center relative mt-8 lg:mt-0">

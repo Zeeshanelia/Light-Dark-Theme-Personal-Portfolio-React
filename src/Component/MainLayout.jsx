@@ -10,10 +10,13 @@ import { PricesPlan } from './PricesPlan'
 import { Testimonials } from './Testimonials'
 import { Contact } from './Contact'
 import { Footer } from './Footer'
-
+import Cursor from "../../src/Cursor";
 export const MainLayout = () => {
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-gray-100 transition-colors duration-300">
+
+             <Cursor magnetic />
+
 
             {/* Navigation */}
             <Nav />

@@ -1,4 +1,7 @@
 import { Download } from 'lucide-react';
+import { motion } from 'framer-motion'
+
+
 
 export const AboutMe = () => {
   const downloadCV = () => {
@@ -10,11 +13,23 @@ export const AboutMe = () => {
     document.body.removeChild(link);
   };
 
+
+  const variants = {
+    hidden: { opacity: 0, x: -100, y: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 1.8 }
+    }
+  }
+
   return (
     <section
       className={` relative py-6 md:py-10 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50
         dark:from-gray-900 dark:to-purple-900 text-gray-900 dark:text-gray-100
         transition-colors duration-300 `}>
+
 
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-900/40 opacity-20 dark:opacity-30 pointer-events-none" />
@@ -43,8 +58,14 @@ export const AboutMe = () => {
           </div>
         </div>
 
+
+
         {/* RIGHT SIDE – TEXT CONTENT */}
-        <div className="relative order-1 lg:order-2">
+
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          animate="visible" className="relative order-1 lg:order-2">
           {/* FADED BACKGROUND TEXT */}
           <h2 className="absolute -top-6 -left-4 md:-top-10 md:-left-8 text-6xl md:text-8xl lg:text-9xl font-black text-emerald-600/5 dark:text-emerald-400/5 tracking-wider select-none pointer-events-none">
             ABOUT ME
@@ -89,6 +110,8 @@ export const AboutMe = () => {
             ))}
           </div>
 
+
+
           {/* CTA – Download CV */}
           <button
             onClick={downloadCV}
@@ -123,8 +146,8 @@ export const AboutMe = () => {
               <i className="ri-arrow-right-up-line text-emerald-500 dark:text-emerald-400" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </section >
   );
 };
