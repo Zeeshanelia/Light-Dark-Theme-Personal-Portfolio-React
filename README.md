@@ -61,6 +61,8 @@ The useEffect hook manages side effects such as theme handling and slider setup.
 - Theme preference is handled dynamically for better user experience.
 
 
+![Portfolio Preview](public/images/projectPrev.png)
 
+#  - ![Avatar](public/images/projectPrev.png)
 
 
