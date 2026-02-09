@@ -1,23 +1,9 @@
 import React, { useState } from "react";
 import {
-  FaCheck,
-  FaClock,
-  FaCalendarAlt,
-  FaCalendarDay,
-  FaCalendarWeek,
-  FaCalendar,
-  FaCode,
-  FaDesktop,
-  FaChartLine,
-  FaShieldAlt,
-  FaQuestionCircle,
-  FaHandshake,
-  FaSyncAlt,
+  FaCheck, FaClock, FaCalendarAlt, FaCalendarDay, FaCalendarWeek, FaCalendar, FaCode, FaDesktop, FaChartLine, FaShieldAlt, FaQuestionCircle, FaHandshake, FaSyncAlt,
 } from "react-icons/fa";
 
-// ──────────────────────────────────────────────
-// DATA
-// ──────────────────────────────────────────────
+
 
 const engagementPlans = [
   {
@@ -148,13 +134,10 @@ const faqs = [
   },
   {
     q: "What about post-delivery support?",
-    a: "Monthly & Quarterly plans include ongoing support.",
+    a: "Weekly Monthly & Quarterly plans include ongoing support.",
   },
 ];
 
-// ──────────────────────────────────────────────
-// MAIN COMPONENT
-// ──────────────────────────────────────────────
 
 export const PricesPlan = () => {
   const [view, setView] = useState("engagement");
@@ -180,14 +163,7 @@ export const PricesPlan = () => {
       {/* Watermark */}
       <h1
         className="
-          absolute top-12 md:top-20 left-1/2 -translate-x-1/2
-          text-[60px] md:text-[120px] lg:text-[140px]
-          font-extrabold tracking-wider
-          text-emerald-600/5 dark:text-emerald-400/5
-          select-none pointer-events-none z-0
-        "
-      >
-        Pricing
+          absolute top-12 md:top-20 left-1/2 -translate-x-1/2 text-[60px] md:text-[120px] lg:text-[140px] font-extrabold tracking-wider text-emerald-600/5 dark:text-emerald-400/5 select-none pointer-events-none z-0">  Pricing
       </h1>
 
       <div className="relative max-w-7xl mx-auto z-10">
@@ -497,16 +473,8 @@ export const PricesPlan = () => {
           </p>
           <button
             className="
-              inline-flex items-center gap-3 px-8 md:px-12 py-4 md:py-5
-              bg-gradient-to-r from-emerald-500 to-emerald-600
-              dark:from-emerald-600 dark:to-emerald-700
-              text-white font-semibold text-base md:text-lg rounded-full
-              hover:from-emerald-600 hover:to-emerald-700
-              dark:hover:from-emerald-700 dark:hover:to-emerald-800
-              shadow-lg hover:shadow-xl hover:shadow-emerald-500/30
-              hover:-translate-y-1 transition-all duration-300
-            "
-          >
+              inline-flex items-center gap-3 px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 text-white font-semibold text-base md:text-lg rounded-full hover:from-emerald-600 hover:to-emerald-700 dark:hover:from-emerald-700 dark:hover:to-emerald-800 shadow-lg hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-1 transition-all duration-300">
+
             <FaHandshake className="text-xl md:text-2xl" />
             Book a Free Consultation
           </button>

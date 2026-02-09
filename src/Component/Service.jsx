@@ -32,7 +32,7 @@ export const Service = () => {
       {/* Background Watermark */}
       <h1
         className="
-          absolute top-12 md:top-20 left-1/2 -translate-x-1/2 text-[60px] md:text-[140px] lg:text-[160px]
+          absolute top-6 md:top-10 left-1/2 -translate-x-1/2 text-[60px] md:text-[140px] lg:text-[160px]
           font-extrabold tracking-widest text-emerald-600/5 dark:text-emerald-400/5 select-none pointer-events-none z-0">
         SERVICES
       </h1>

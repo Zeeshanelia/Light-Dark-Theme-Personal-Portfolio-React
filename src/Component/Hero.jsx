@@ -74,7 +74,7 @@ export const Hero = () => {
                         </div>
 
                         {/* Buttons Container - Updated with Pricing button */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-4">
                             {/* GitHub Button */}
                             <a
                                 href="https://github.com/Zeeshanelia"
@@ -90,15 +90,12 @@ export const Hero = () => {
                                          shadow-lg hover:shadow-xl
                                          shadow-emerald-500/20 dark:shadow-emerald-500/30
                                          hover:-translate-y-1
-                                         flex items-center justify-center gap-2"
-                            >
+                                         flex items-center justify-center gap-2">
+
                                 <i className="ri-github-fill"></i>
-                                View My Work
-                                <span className="absolute inset-0 rounded-full border-2
-                                               border-emerald-400/30 dark:border-emerald-500/30
-                                               group-hover:border-emerald-400/50
-                                               dark:group-hover:border-emerald-500/50
-                                               transition-all duration-300" />
+                                 My Work
+
+                                <span className="absolute inset-0 rounded-full border-2 border-emerald-400/30 dark:border-emerald-500/30 group-hover:border-emerald-400/50 dark:group-hover:border-emerald-500/50 transition-all duration-300"/>
                             </a>
 
                             {/* Download CV Button */}
@@ -181,8 +178,8 @@ export const Hero = () => {
                                         ${stat.isClickable
                                             ? 'text-yellow-700 dark:text-yellow-300 group-hover:text-yellow-800 dark:group-hover:text-yellow-200 font-medium'
                                             : 'text-gray-600 dark:text-gray-400'
-                                        }`}
-                                    >
+                                        }`} >
+
                                         {stat.label}
                                     </div>
                                 </div>

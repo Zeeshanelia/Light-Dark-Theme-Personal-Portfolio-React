@@ -188,13 +188,13 @@ export const Testimonials = () => {
           </div>
         </div>
 
-        {/* Stats */}
+             {/************** Stats **************/}
         <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10 max-w-4xl mx-auto">
           {[
-            { value: "100%", label: "Client Satisfaction" },
-            { value: "50+",  label: "Projects Delivered" },
-            { value: "95%",  label: "On Time Delivery" },
-            { value: "4.9",  label: "Average Rating" },
+            { value: "95%", label: "Client Satisfaction" },
+            { value: "20+",  label: "Projects Delivered" },
+            { value: "100%",  label: "On Time Delivery" },
+            { value: "4.8",  label: "Average Rating" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-600 dark:text-emerald-400">

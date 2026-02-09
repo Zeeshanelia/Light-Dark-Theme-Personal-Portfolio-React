@@ -39,7 +39,7 @@ export const Nav = () => {
         if (!isHomePage) return;
 
         const handleScroll = () => {
-            const sections = ['home', 'services', 'about-me', 'projects','pricing', 'testimonial', 'contact-me'];
+            const sections = ['home', 'services', 'about-me', 'projects', 'pricing', 'testimonial', 'contact-me'];
             const scrollPosition = window.scrollY + 100; // Offset for navbar
 
             let currentSection = 'home';
@@ -232,12 +232,11 @@ export const Nav = () => {
                         <NavLink to="/" className="flex items-center gap-2">
                             <h1 className="md:text-2xl font-bold text-green-600 dark:text-green-400 flex items-center gap-2">
                                 <i className="ri-code-s-slash-line"></i>
-                                <span className="inline-flex items-center justify-center
-                                   w-[26px] h-[28px] rounded-2xl
-                                   bg-gradient-to-t from-green-500 to-emerald-600 text-white font-bold
-                                   hover:shadow-xl hover:shadow-green-500/50 hover:scale-105 transition-all duration-200">
-                                    Z
-                                </span>
+                                <div
+                                    className="relative w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600  dark:from-emerald-600 dark:to-emerald-700 flex items-center justify-center shadow-lg ">
+                                    <span className="text-2xl font-bold text-white">Z</span>
+                                    <div className="absolute inset-0 rounded-full border-2 border-emerald-400/40 dark:border-emerald-500/40 animate-ping" />
+                                </div>
                                 <span className="hidden sm:inline">eeshanElia</span>
                             </h1>
                         </NavLink>
@@ -312,8 +311,8 @@ export const Nav = () => {
             {/* Mobile Navigation */}
             <div
                 className={`md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0 overflow-hidden"
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0 overflow-hidden"
                     }`}
             >
                 <div className="px-2 pt-2 pb-3 space-y-1
