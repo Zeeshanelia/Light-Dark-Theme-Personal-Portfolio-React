@@ -31,7 +31,7 @@ A modern, responsive **personal portfolio** built with **React + Vite**, featuri
 
 ```bash
 git clone https://github.com/Zeeshanelia/Light-Dark-Theme-Personal-Portfolio-React.git
-cd portfolio
+cd Light-Dark-Theme-Personal-Portfolio-React
 npm run dev
 
 
@@ -61,8 +61,10 @@ The useEffect hook manages side effects such as theme handling and slider setup.
 - Theme preference is handled dynamically for better user experience.
 
 
-![Portfolio Preview](public/images/projectPrev.png)
 
-#  - ![Avatar](public/images/projectPrev.png)
+![alt text](public/images/projectPrev.png)
+
+
+
 
 

@@ -120,14 +120,14 @@ export const Footer = () => {
           <div>
             <h4 className="text-emerald-600 dark:text-emerald-400 font-semibold text-lg mb-6 flex items-center gap-2">
               <i className="ri-mail-send-line" />
-              Newsletter
+              Newsletter up coming
             </h4>
 
             <p className="text-gray-700 dark:text-gray-300 text-sm mb-5">
               Stay updated with new projects, tips & offers.
             </p>
 
-            <form className="relative group">
+            {/* <form className="relative group">
               <input
                 type="email"
                 placeholder="Your email address"
@@ -137,7 +137,7 @@ export const Footer = () => {
                 className=" absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 text-white flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
                 <i className="ri-send-plane-fill text-lg" />
               </button>
-            </form>
+            </form> */}
 
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
               We respect your privacy — unsubscribe anytime.

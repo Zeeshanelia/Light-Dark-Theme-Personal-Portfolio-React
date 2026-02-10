@@ -26,7 +26,7 @@ export const Service = () => {
     <section
       id="services"
       className={`
-        relative py-6 md:py-10 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50
+        relative py-2 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50
         dark:from-gray-900 dark:to-purple-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}>
 
       {/* Background Watermark */}

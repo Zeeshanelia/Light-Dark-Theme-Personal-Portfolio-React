@@ -59,7 +59,7 @@ export const Testimonials = () => {
   return (
     <section
       className="
-        relative py-16 md:py-24 lg:py-32 overflow-hidden
+        relative py-4 md:py-8 lg:py-12 overflow-hidden
         bg-gradient-to-r from-gray-50 to-blue-50
         dark:from-gray-900 dark:to-purple-900
         text-gray-900 dark:text-gray-100

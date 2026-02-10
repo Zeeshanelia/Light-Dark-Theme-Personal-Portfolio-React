@@ -22,7 +22,7 @@ export const Projects = () => {
   return (
     <section
       className={`
-        relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-purple-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}>
+        relative w-full py-2 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-purple-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}>
 
                             {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-900/30 opacity-20 dark:opacity-30 pointer-events-none" />
@@ -56,11 +56,11 @@ export const Projects = () => {
             </h2>
           </div>
 
-          <button
+          <a href="https://github.com/Zeeshanelia" target="_blank"
             className=" group relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 text-white font-semibold px-6 py-3 rounded-full hover:from-emerald-600 hover:to-emerald-700 dark:hover:from-emerald-700 dark:hover:to-emerald-800 transition-all duration-300 shadow-lg shadow-emerald-500/20 dark:shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/30 dark:hover:shadow-emerald-500/40">
             View All Projects
             <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform duration-300"></i>
-          </button>
+          </a>
         </div>
 
         {/* Project Cards */}
